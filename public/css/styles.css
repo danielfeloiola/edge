@@ -1,0 +1,423 @@
+nav .navbar
+{
+    background-color: red;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    margin-bottom: 0.3em;
+}
+
+/* colors for brand */
+nav .navbar-brand .red
+{
+    color: red;
+    font-family: serif;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.9);
+
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+li
+{
+    list-style-type:none;
+}
+
+#main
+{
+    text-align: left;
+}
+
+td
+{
+    padding: 5px;
+}
+
+table.left{
+    margin-left:auto;
+    margin-right:auto;
+
+}
+table.center
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+tr:hover
+{
+    background-color: #f0f5f5;
+}
+
+footer
+{
+    position: fixed;
+    margin-left: 17%;
+    bottom:10px;
+    background-color: white;
+}
+
+
+.block {
+    padding: 1px;
+    display: inline-block;
+    float: left;
+    width: 49%;
+}
+
+.block2 {
+    padding: 1px;
+    display: inline-block;
+    float: left;
+    width: 49%;
+}
+
+
+@media (max-width: 50em) {
+
+    .block2 {
+
+        display:none;
+    }
+    .block {
+    padding: 1px;
+    display: inline-block;
+    float: left;
+    width: 85%;
+    }
+}
+
+img {
+    max-width:90%
+
+}
+
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+
+
+
+
+.breadcrumbs {
+    width: 100%;
+    margin: auto;
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 5px;
+    color: white;
+}
+
+.breadcrumbs a {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 14px;
+	line-height: 36px;
+	color: white;
+	padding: 0 30px 0 40px;
+	background: #666;
+	background: linear-gradient(#666, #333);
+	position: relative;
+}
+.breadcrumbs a:first-child {
+	padding-left: 46px;
+	border-radius: 5px 0 0 5px;
+}
+.breadcrumbs a:first-child:before {
+	left: 14px;
+}
+.breadcrumbs a:last-child {
+	border-radius: 0 5px 5px 0;
+	padding-right: 46px;
+}
+
+.breadcrumbs a.active, .breadcrumb a:hover{
+	background: #333;
+	background: linear-gradient(#333, #000);
+}
+.breadcrumbs a.active:after, .breadcrumb a:hover:after {
+	background: #333;
+	background: linear-gradient(135deg, #333, #000);
+}
+.breadcrumbs a:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -18px;
+	width: 36px;
+	height: 36px;
+	transform: scale(0.707) rotate(45deg);
+	z-index: 1;
+	background: #666;
+	background: linear-gradient(135deg, #666, #333);
+	box-shadow:
+		2px -2px 0 2px rgba(0, 0, 0, 0),
+		3px -3px 0 2px rgba(255, 255, 255, 1);
+	border-radius: 0 5px 0 50px;
+}
+.breadcrumbs a:last-child:after {
+	content: none;
+}
+.breadcrumbs a:before {
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin: 8px 0;
+	position: absolute;
+	top: 0;
+	left: 30px;
+	background: #444;
+	background: linear-gradient(#444, #222);
+	font-weight: bold;
+}
+.flat a, .flat a:after {
+	background: #ff0000;
+	color: white;
+	transition: all 0.5s;
+}
+.flat a:before {
+	background: white;
+}
+
+.flat a.active, .flat a.active:after{
+    background: black;
+    color: white;
+}
+
+
+.popup {
+ position: relative;
+ display: inline-block;
+ cursor: pointer;
+}
+
+.popup .popuptext {
+ width: 600px;
+ background-color: white;
+ color: black;
+ text-align: center;
+ border-radius: 6px;
+ padding: 8px 0;
+ position: absolute;
+ z-index: 1;
+ bottom: 20px;
+ margin-left: -300px;
+ margin-bottom: 100%;
+}
+
+
+
+.left {
+  display: inline-block;
+  position: fixed;
+  border-radius: 50%;
+  margin-left: -47%;
+  margin-top: 20%;
+  z-index:1;
+}
+
+.left:after {
+  content: '';
+	display: inline-block;
+  margin-top: 1.05em;
+  margin-left: 0em;
+  width: 1.4em;
+  height: 1.4em;
+  border-top: 0.5em solid #333;
+  border-right: 0.5em solid #333;
+  -moz-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.right {
+  display: inline-block;
+  position: fixed;
+  margin-top: 20%;
+  border-radius: 50%;
+  margin-left: 45%;
+  z-index:1;
+}
+
+.right:after {
+  content: '';
+	display: inline-block;
+  margin-top: 1.05em;
+  margin-left: 0em;
+  width: 1.4em;
+  height: 1.4em;
+  border-top: 0.5em solid #333;
+  border-right: 0.5em solid #333;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.breadcrumbs2 {
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 5px;
+    margin-top: 1em;
+}
+
+.breadcrumbs2 a {
+	text-decoration: none;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 14px;
+	line-height: 36px;
+	color: white;
+	padding: 0 40px 0 40px;
+	background: #666;
+	background: linear-gradient(#666, #333);
+	position: relative;
+}
+
+.breadcrumbs2 a:first-child {
+	padding-left: 46px;
+	border-radius: 5px 0 0 5px;
+}
+.breadcrumbs2 a:first-child:before {
+	left: 14px;
+}
+.breadcrumbs2 a:last-child {
+	border-radius: 0 5px 5px 0;
+	padding-right: 50px;
+}
+
+.breadcrumbs2 a.active, .breadcrumb a:hover{
+	background: #333;
+	background: linear-gradient(#333, #000);
+}
+.breadcrumbs a.active:after, .breadcrumb a:hover:after {
+	background: #333;
+	background: linear-gradient(135deg, #333, #000);
+}
+
+.breadcrumbs2 a:last-child:after {
+	content: none;
+}
+
+
+.flat2 a, .flat2 a:after {
+	background: #ffffff;
+	color: black;
+	transition: all 0.5s;
+}
+.flat2 a:before {
+	background: white;
+}
+.flat2 a:hover, .flat2 a.active,
+.flat2 a:hover:after, .flat2 a.active:after{
+	background: #9EEB62;
+}
+
+
+.help-tip{
+    position: inherit;
+    /*top: 18px;
+    right: 18px;*/
+    display: inline-block;
+    text-align: center;
+    background-color: #BCDBEA;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: default;
+}
+
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+
+
+    -webkit-animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out;
+
+}
+
+.help-tip p{    /* The tooltip */
+    display: none;
+    margin-right: 250px;
+    text-align: left;
+    background-color: #1E2021;
+    padding: 20px;
+    width: 300px;
+    position: absolute;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    right: -25px;
+    margin-top: 10px;
+    color: #FFF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+    width:100%;
+    height:40px;
+    content:'';
+    position: absolute;
+    top:-40px;
+    left:0;
+}
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}

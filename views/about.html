@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tabelas
+{% endblock %}
+
+{% block main %}
+
+
+<div>
+    <a href="/analisar">
+        <span class="left"></span>
+        <span class="glyphicon glyphicon-menu-left"></span>
+    </a>
+</div>
+
+
+
+    {% if msg %}
+        <div class="alert alert-success" role="alert">
+            {{ msg }}
+        </div>
+    {% endif %}
+
+
+    <a class="nav-link" href="/nodes"> Nós </a>
+    <a class="nav-link" href="/edges"> Arestas </a>
+    <a class="nav-link" href="/arquivogdf"> GDF </a>
+    <br>
+
+    <a class="nav-link" href="/confirma"> Recomeçar </a>
+
+
+    <footer class="small text-center text-muted" style="align: center">
+    Ferramenta desenvolvida por Daniel Loiola, membro do R-EST/UFMG. Código disponível no <a href="https://github.com/danielfeloiola/ytd-cloud">GitHub</a>.
+    </footer>
+{% endblock %}
