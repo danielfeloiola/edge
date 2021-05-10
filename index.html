@@ -1,0 +1,308 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+<body style="background: white;">
+    <h1>Hello World!</h1>
+    <p>
+        We are using Node.js <span id="node-version"></span>,
+        Chromium <span id="chrome-version"></span>,
+        and Electron <span id="electron-version"></span>.
+    </p>
+</body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+        <!-- FAVICON -->
+        <link href="public/img/fav.ico" rel="icon" type="image/x-icon">
+
+        <!-- CSS -->
+        <link href="public/css/styles.css" rel="stylesheet" type="text/css">
+        <link href="public/css/graph.css" rel="stylesheet" type="text/css">
+
+        <!-- FONTS AND ICONS -->
+        <link rel="stylesheet" href="public/css/font-awesome.min.css">
+
+
+        <!-- JS -->
+        <script src="public/js/index.js"></script>
+
+        <!-- SCRIPTS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" type="text/javascript"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" type="text/javascript"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js" type="text/javascript"></script>
+
+        <!-- GRAPHS -->
+
+        <!-- Sigma -->
+        <script src="public/build/sigma.min.js" type="text/javascript"></script>
+        <!-- Socket IO -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.min.js" type="text/javascript"></script>
+        <!-- Force Atlas -->
+        <script src="public/build/plugins/sigma.layout.forceAtlas2/supervisor.js" type="text/javascript"></script>
+        <script src="public/build/plugins/sigma.layout.forceAtlas2/worker.js" type="text/javascript"></script>
+
+        
+
+
+        <script src="public/build/src/sigma.core.js"></script>
+
+        <!-- <script src="public/build/src/conrad.js"></script> -->
+        <script src="public/build/src/utils/sigma.utils.js"></script>
+        <script src="public/build/src/utils/sigma.polyfills.js"></script>
+        <script src="public/build/src/sigma.settings.js"></script>
+        <script src="public/build/src/classes/sigma.classes.dispatcher.js"></script>
+        <script src="public/build/src/classes/sigma.classes.configurable.js"></script>
+        <script src="public/build/src/classes/sigma.classes.graph.js"></script>
+        <script src="public/build/src/classes/sigma.classes.camera.js"></script>
+        <script src="public/build/src/classes/sigma.classes.quad.js"></script>
+        <script src="public/build/src/classes/sigma.classes.edgequad.js"></script>
+        <script src="public/build/src/captors/sigma.captors.mouse.js"></script>
+        <script src="public/build/src/captors/sigma.captors.touch.js"></script>
+        <script src="public/build/src/renderers/sigma.renderers.canvas.js"></script>
+        <script src="public/build/src/renderers/sigma.renderers.webgl.js"></script>
+        <script src="public/build/src/renderers/sigma.renderers.svg.js"></script>
+        <script src="public/build/src/renderers/sigma.renderers.def.js"></script>
+        <script src="public/build/src/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+        <script src="public/build/src/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+        <script src="public/build/src/renderers/webgl/sigma.webgl.edges.def.js"></script>
+        <script src="public/build/src/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+        <script src="public/build/src/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.labels.def.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.edges.def.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+        <script src="public/build/src/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+        <script src="public/build/src/renderers/svg/sigma.svg.utils.js"></script>
+        <script src="public/build/src/renderers/svg/sigma.svg.nodes.def.js"></script>
+        <script src="public/build/src/renderers/svg/sigma.svg.edges.def.js"></script>
+        <script src="public/build/src/renderers/svg/sigma.svg.edges.curve.js"></script>
+        <script src="public/build/src/renderers/svg/sigma.svg.labels.def.js"></script>
+        <script src="public/build/src/renderers/svg/sigma.svg.hovers.def.js"></script>
+        <script src="public/build/src/middlewares/sigma.middlewares.rescale.js"></script>
+        <script src="public/build/src/middlewares/sigma.middlewares.copy.js"></script>
+        <script src="public/build/src/misc/sigma.misc.animation.js"></script>
+        <script src="public/build/src/misc/sigma.misc.bindEvents.js"></script>
+        <script src="public/build/src/misc/sigma.misc.bindDOMEvents.js"></script>
+        <script src="public/build/src/misc/sigma.misc.drawHovers.js"></script>
+
+        <!-- PLUGINs SCRIPTS -->
+
+        <!-- DRAG NODES PLUGIN -->
+        <script src="public/build/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+        <!-- ANIMATE PLUGIN -->
+        <script src="public/build/plugins/sigma.plugins.animate/sigma.plugins.animate.js"></script>
+        <!-- SVG EXPORT PLUGIN -->
+        <script src="public/build/plugins/sigma.exporters.svg/sigma.exporters.svg.js"></script>
+        <!-- NO OVERLAP PLUGIN -->
+        <script src="public/build/plugins/sigma.layout.noverlap/sigma.layout.noverlap.js" type="text/javascript"></script>
+
+        <!-- <script src="public/build/plugins/sigma.plugins.animate/sigma.plugins.animate.js" type="text/javascript"></script> -->
+        
+        <!-- PARSER PLUGINS -->
+        <script src="public/build/plugins/sigma.parsers.json/sigma.parsers.json.js" type="text/javascript"></script>
+
+        <script src="public/build/plugins/sigma.parsers.gexf/gexf-parser.js"></script>
+        <script src="public/build/plugins/sigma.parsers.gexf/sigma.parsers.gexf.js"></script>
+
+<!-- END SIGMA IMPORTS -->
+        <!-- TITLE -->
+        <title>Edge</title>
+
+    </head>
+    <body>
+      <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+      <div class="wrapper">
+        
+        <div class="top_navbar">
+          <!-- BURGER MENU 
+          <div class="hamburger">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+          </div>-->
+
+          <!-- TOP MENU -->
+          <!--<div class="top_menu">
+            <div class="logo">
+              logo
+            </div>
+            <ul>
+              <li><a href="#">
+                <i class="fas fa-search"></i>
+                </a></li>
+              <li><a href="#">
+                <i class="fas fa-bell"></i>
+                </a></li>
+              <li><a href="#">
+                <i class="fas fa-user"></i>
+                </a></li>
+            </ul>
+          </div>-->
+        </div>
+        
+        <div class="sidebar">
+            <ul>
+
+              <li><a href="#" id="background-color-btn" > 
+                <span style="margin-left: 5px;" class="icon"><i class="fas fa-lightbulb-o fa-2x"></i></span><!-- REMOVI THIS STYLE TAG LATER-->
+              </a></li>
+
+              <li><a href="#" id="animate-btn">
+                <span class="icon"><i class="fas fa-book fa-2x"></i></span>
+              </a></li>
+
+              <li><a href="#" id="spacialize-btn" alt="spacialize">
+                <span class="icon"><i class="fas fa-volleyball-ball fa-2x"></i></span>
+              </a></li>
+
+              <li><a href="#" id="export"> <!-- class="active" -->
+                <span class="icon"><i class="fas fa-blog fa-2x"></i></span>
+              </a></li>
+
+              <li><a href="#">
+                <span class="icon"><i class="fas fa-leaf fa-2x"></i></span>
+              </a></li>
+
+          </ul>
+        </div>
+        
+        <!-- -
+        <div class="main_container">
+          <div class="item">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+          </div>
+          <div class="item">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+          </div>
+          <div class="item">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+          </div>
+          <div class="item">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
+          </div>
+        </div>
+      </div>-->
+
+      <!-- 
+      <nav>
+      </nav>
+      -->
+
+      <!-- 
+        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: white;position:fixed;">
+            <a class="navbar-brand" href="/">
+                <span class="red">edge lite</span>
+            </a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse">
+
+
+                <header id="header" id="home">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between d-flex">
+                          <div id="logo">
+                            <a href="index.html"><!-   <img src="public/img/logo.png" alt="" title="" />   ->
+                              <p>edge</p>
+                            </a>
+                          </div>
+                          <nav id="nav-menu-container">
+                            <ul class="nav-menu">
+                              <li class="menu-active"><a href="/">Home</a></li>
+                              <li><a href="/about">About</a></li>
+                              <li><a href="/dashboard">Dashboard</a></li>
+
+                              <!-  <li><a href="#price">Price</a></li>
+                              <li><a href="#testimonial">Testimonial</a></li>-->
+                              <!-- 
+                              <li class="menu-has-children"><a href="">Pages</a>
+                                <ul>
+                                  <li><a href="generic.html">Generic</a></li>
+                                  <li><a href="elements.html">Elements</a></li>
+                                </ul>
+                              </li>-->
+                              <!--<li><a class="ticker-btn" href="#">Get Started</a></li>    ->				          
+                            </ul>
+                          </nav>      <!- #nav-menu-container     ->		    		
+                        </div>
+                    </div>
+                  </header>    <!- #header -->
+
+
+                <!-- Menu principal
+                <ul class="breadcrumbs flat" >
+
+                  <!-     MUDAR PARA O PADRAO DO MUSTACHE 
+                    <a class="{{ 'active' if page == 'index' else '' }}" >Iniciar</a>
+                    <a class="{{ 'active' if page == 'coletar' else '' }}" >Coletar</a>
+                    <a class="{{ 'active' if page == 'resultados' else '' }}" >Resultados</a>
+                    <a class="{{ 'active' if page == 'navegar' else '' }}" >Navegar</a>
+                    <a class="{{ 'active' if page == 'analisar' else '' }}" >Analisar</a>
+                    <a class="{{ 'active' if page == 'tabelas' else '' }}" href="/about">About</a>
+                </ul> -->
+
+                <!-- botão de logout  ->
+                <ul class="breadcrumbs2 flat2">
+                    <a href="/logout">Sair</a>
+                </ul>
+
+            </div>
+        </nav>
+      -->
+
+
+        <!--
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+        -->
+
+        <main class="container p-5">
+
+          <div>
+            <div id='sigma-container'></div>
+          </div>
+          
+          <!--
+          <div class="popup">
+            <span class="popuptext" id="myPopup"></span>
+          </div>
+          -->
+
+        </main>
+    </body>
+</html>
