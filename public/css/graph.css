@@ -9,12 +9,9 @@ body {
 }
 
 :root {
-    --graph-backgorund-color: white;
-    
-
+    --graph-backgorund-color: #ffffff;
     --sidebar-color: #2e4ead;
     --hoover-btn-color: #4360b5;
-
     --icon-btn-color: #92a6e2;
     --active-btn-strip-color: #92a6e2;
 }
