@@ -1,20 +1,6 @@
 <!-- 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-</head>
-<body style="background: white;">
-    <h1>Hello World!</h1>
-    <p>
-        We are using Node.js <span id="node-version"></span>,
-        Chromium <span id="chrome-version"></span>,
-        and Electron <span id="electron-version"></span>.
-    </p>
-</body>
-</html>
+Edge - a network visualization tool
+Version 1.0
 -->
 
 
@@ -64,7 +50,7 @@
         
 
 
-        <script src="public/build/src/sigma.core.js"></script>
+        <!-- <script src="public/build/src/sigma.core.js"></script> -->
 
         <!-- <script src="public/build/src/conrad.js"></script> -->
         <script src="public/build/src/utils/sigma.utils.js"></script>
@@ -131,7 +117,10 @@
         <script src="public/build/plugins/sigma.parsers.gexf/gexf-parser.js"></script>
         <script src="public/build/plugins/sigma.parsers.gexf/sigma.parsers.gexf.js"></script>
 
-<!-- END SIGMA IMPORTS -->
+        <!-- END SIGMA IMPORTS -->
+
+
+
         <!-- TITLE -->
         <title>Edge</title>
 
@@ -141,38 +130,11 @@
 
       <div class="wrapper">
         
-        <div class="top_navbar">
-          <!-- BURGER MENU 
-          <div class="hamburger">
-            <div class="one"></div>
-            <div class="two"></div>
-            <div class="three"></div>
-          </div>-->
-
-          <!-- TOP MENU -->
-          <!--<div class="top_menu">
-            <div class="logo">
-              logo
-            </div>
-            <ul>
-              <li><a href="#">
-                <i class="fas fa-search"></i>
-                </a></li>
-              <li><a href="#">
-                <i class="fas fa-bell"></i>
-                </a></li>
-              <li><a href="#">
-                <i class="fas fa-user"></i>
-                </a></li>
-            </ul>
-          </div>-->
-        </div>
-        
         <div class="sidebar">
             <ul>
 
-              <li><a href="#" id="background-color-btn" > 
-                <span style="margin-left: 5px;" class="icon"><i class="fas fa-lightbulb-o fa-2x"></i></span><!-- REMOVI THIS STYLE TAG LATER-->
+              <li><a href="#" id="background-color-btn" alt="Lights"> 
+                <span  class="icon"><i class="fas fa-lightbulb-o fa-2x"></i></span><!-- REMOVE THIS STYLE TAG LATER  style="margin-left: 5px;"-->
               </a></li>
 
               <li><a href="#" id="animate-btn">
@@ -184,112 +146,18 @@
               </a></li>
 
               <li><a href="#" id="export"> <!-- class="active" -->
-                <span class="icon"><i class="fas fa-blog fa-2x"></i></span>
+                <span class="icon"><i class="fa fa-file-image-o fa-2x"></i></span><!-- REMOVE THIS STYLE TAG LATER  style="margin-left: 5px;" -->
               </a></li>
 
-              <li><a href="#">
-                <span class="icon"><i class="fas fa-leaf fa-2x"></i></span>
+              <li><a href="#" id="change-graph-color">
+                <span class="icon"><i class="fas fa-paint-brush fa-2x"></i></span>
               </a></li>
 
           </ul>
+
         </div>
         
-        <!-- -
-        <div class="main_container">
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-          <div class="item">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sapiente adipisci nemo atque eligendi reprehenderit minima blanditiis eum quae aspernatur!
-          </div>
-        </div>
-      </div>-->
-
-      <!-- 
-      <nav>
-      </nav>
-      -->
-
-      <!-- 
-        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: white;position:fixed;">
-            <a class="navbar-brand" href="/">
-                <span class="red">edge lite</span>
-            </a>
-            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse">
-
-
-                <header id="header" id="home">
-                    <div class="container">
-                        <div class="row align-items-center justify-content-between d-flex">
-                          <div id="logo">
-                            <a href="index.html"><!-   <img src="public/img/logo.png" alt="" title="" />   ->
-                              <p>edge</p>
-                            </a>
-                          </div>
-                          <nav id="nav-menu-container">
-                            <ul class="nav-menu">
-                              <li class="menu-active"><a href="/">Home</a></li>
-                              <li><a href="/about">About</a></li>
-                              <li><a href="/dashboard">Dashboard</a></li>
-
-                              <!-  <li><a href="#price">Price</a></li>
-                              <li><a href="#testimonial">Testimonial</a></li>-->
-                              <!-- 
-                              <li class="menu-has-children"><a href="">Pages</a>
-                                <ul>
-                                  <li><a href="generic.html">Generic</a></li>
-                                  <li><a href="elements.html">Elements</a></li>
-                                </ul>
-                              </li>-->
-                              <!--<li><a class="ticker-btn" href="#">Get Started</a></li>    ->				          
-                            </ul>
-                          </nav>      <!- #nav-menu-container     ->		    		
-                        </div>
-                    </div>
-                  </header>    <!- #header -->
-
-
-                <!-- Menu principal
-                <ul class="breadcrumbs flat" >
-
-                  <!-     MUDAR PARA O PADRAO DO MUSTACHE 
-                    <a class="{{ 'active' if page == 'index' else '' }}" >Iniciar</a>
-                    <a class="{{ 'active' if page == 'coletar' else '' }}" >Coletar</a>
-                    <a class="{{ 'active' if page == 'resultados' else '' }}" >Resultados</a>
-                    <a class="{{ 'active' if page == 'navegar' else '' }}" >Navegar</a>
-                    <a class="{{ 'active' if page == 'analisar' else '' }}" >Analisar</a>
-                    <a class="{{ 'active' if page == 'tabelas' else '' }}" href="/about">About</a>
-                </ul> -->
-
-                <!-- botão de logout  ->
-                <ul class="breadcrumbs2 flat2">
-                    <a href="/logout">Sair</a>
-                </ul>
-
-            </div>
-        </nav>
-      -->
-
-
-        <!--
-        {% if get_flashed_messages() %}
-            <header>
-                <div class="alert alert-primary border text-center" role="alert">
-                    {{ get_flashed_messages() | join(" ") }}
-                </div>
-            </header>
-        {% endif %}
-        -->
+        
 
         <main class="container p-5">
 
@@ -297,11 +165,7 @@
             <div id='sigma-container'></div>
           </div>
           
-          <!--
-          <div class="popup">
-            <span class="popuptext" id="myPopup"></span>
-          </div>
-          -->
+        
 
         </main>
     </body>

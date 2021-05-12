@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
+
 
 // former node_express
 //const path = require('path');
@@ -16,6 +17,7 @@ function createWindow () {
     width: 1280,
     height: 768,
     webPreferences: {
+      nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js')
     }
   })
@@ -23,10 +25,17 @@ function createWindow () {
   win.webContents.openDevTools()
 
   win.loadFile('index.html')
+  
+
 }
+
+
 
 app.whenReady().then(() => {
   createWindow()
+
+  // TESTING THE MENUBAR STUFF
+  Menu.setApplicationMenu(mainMenu)
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -47,15 +56,131 @@ app.on('window-all-closed', () => {
 
 
 
+// THIS IS FOR THE APPLICATION MENU ON THE TOP BAR
+
+const isMac = process.platform === "darwin";
+
+const template = [
+  // { role: 'appMenu' }
+  ...(isMac ? [{
+    label: "Edge",
+    submenu: [
+      { role: 'about' },
+      { type: 'separator' },
+      { role: 'services' },
+      { type: 'separator' },
+      { role: 'hide' },
+      { role: 'hideothers' },
+      { role: 'unhide' },
+      { type: 'separator' },
+      { role: 'quit' }
+    ]
+  }] : []),
+  // { role: 'fileMenu' }
+  {
+    label: 'File',
+    submenu: [
+      { role: 'open' },
+      { role: 'save' },
+      { role: 'save as' },
+      isMac ? { role: 'close' } : { role: 'quit' }
+    ]
+  },
+  // { role: 'editMenu' }
+  {
+    label: 'Edit',
+    submenu: [
+      { role: 'undo' },
+      { role: 'redo' },
+      { type: 'separator' },
+      { role: 'cut' },
+      { role: 'copy' },
+      { role: 'paste' },
+      ...(isMac ? [
+        { role: 'pasteAndMatchStyle' },
+        { role: 'delete' },
+        { role: 'selectAll' },
+        { type: 'separator' },
+        {
+          label: 'Speech',
+          submenu: [
+            { role: 'startSpeaking' },
+            { role: 'stopSpeaking' }
+          ]
+        }
+      ] : [
+        { role: 'delete' },
+        { type: 'separator' },
+        { role: 'selectAll' }
+      ])
+    ]
+  },
+  // { role: 'viewMenu' }
+  {
+    label: 'View',
+    submenu: [
+      { role: 'reload' },
+      { role: 'forceReload' },
+      { role: 'toggleDevTools' },
+      { type: 'separator' },
+      { role: 'resetZoom' },
+      { role: 'zoomIn' },
+      { role: 'zoomOut' },
+      { type: 'separator' },
+      { role: 'togglefullscreen' }
+    ]
+  },
+  // { role: 'windowMenu' }
+  {
+    label: 'Window',
+    submenu: [
+      { role: 'minimize' },
+      { role: 'zoom' },
+      ...(isMac ? [
+        { type: 'separator' },
+        { role: 'front' },
+        { type: 'separator' },
+        { role: 'window' }
+      ] : [
+        { role: 'close' }
+      ])
+    ]
+  },
+  {
+    role: 'help',
+    submenu: [
+      {
+        label: 'Learn More',
+        click: async () => {
+          const { shell } = require('electron')
+          await shell.openExternal('https://electronjs.org')
+        }
+      }
+    ]
+  }
+]
+
+
+
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
+
+
+
 
 
 
 
 
 io.on('connection', socket => {
-    console.log("Connected to client")
 
+
+    console.log("connected")
+
+    // Test the socket connection
     socket.emit('message', "Hello from server");
+    
+    
     // either with send()
     //socket.send('Hello!');
 
@@ -169,4 +294,7 @@ io.on('connection', socket => {
 
 const PORT = 3000 || process.env.PORT;
 
-//server.listen(PORT, () => console.log(`listening on port ${PORT}!`));
+// USING THE NODE_EXPRESS BACKEND SO ITS DISABLED
+// server.listen(PORT, () => console.log(`listening on port ${PORT}!`));
+
+
